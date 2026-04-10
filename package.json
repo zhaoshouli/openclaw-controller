@@ -1,0 +1,20 @@
+{
+  "name": "openclaw-controller",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @openclaw/server & npm run dev --workspace @openclaw/web",
+    "dev:web": "npm run dev --workspace @openclaw/web",
+    "dev:server": "npm run dev --workspace @openclaw/server",
+    "build": "npm run build --workspace @openclaw/shared && npm run build --workspace @openclaw/server && npm run build --workspace @openclaw/web",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
+
